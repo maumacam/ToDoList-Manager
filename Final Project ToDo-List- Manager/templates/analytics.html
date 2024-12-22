@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Analytics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/uploads/2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background-color: rgba(201, 173, 74, 0.4);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(156, 108, 108, 0.2);
+            text-align: center;
+            width: 70%;
+            max-width: 600px;
+        }
+        .container h1 {
+            color: #d1baa8;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4c2b1c;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .menu a:hover {
+            background-color: #614509;
+        }
+        .analytics-container {
+            margin-top: 20px;
+        }
+        .analytics-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .analytics-container th, .analytics-container td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .analytics-container th {
+            background-color: #bc8165;
+            color: rgb(230, 224, 224);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Task Analytics</h1>
+
+        <!-- Menu -->
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+        <!-- Analytics Information -->
+        <div class="analytics-container">
+            <h2>Analytics Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Tasks</td>
+                        <td>{{ total_tasks }}</td>
+                    </tr>
+                    <tr>
+                        <td>Completed Tasks</td>
+                        <td>{{ completed_tasks }}</td>
+                    </tr>
+                    <tr>
+                        <td>Pending Tasks</td>
+                        <td>{{ pending_tasks }}</td>
+                    </tr>
+                    <tr>
+                        <td>Overdue Tasks</td>
+                        <td>{{ overdue_tasks }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
